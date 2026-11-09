@@ -1,0 +1,33 @@
+:root{--ink:#26264a;--blue:#4f8cff;--green:#35c78a}
+*{box-sizing:border-box}
+body{margin:0;font-family:system-ui,sans-serif;color:var(--ink);min-height:100vh;
+  background:linear-gradient(160deg,#eef2ff,#fdf0f7 55%,#e8f9f1)}
+#bg{position:fixed;inset:0;width:100%;height:100%;z-index:0}
+main{position:relative;z-index:1;max-width:520px;margin:0 auto;padding:20vh 1rem 2rem}
+.card{background:rgba(255,255,255,.8);backdrop-filter:blur(12px);border-radius:24px;padding:1.3rem;
+  box-shadow:0 12px 40px rgba(79,140,255,.2)}
+h1,h2{margin:.2rem 0 .6rem}
+input,select{width:100%;padding:.8rem 1rem;margin:.3rem 0;font-size:1rem;border:2px solid #dfe5ff;
+  border-radius:14px;background:#fff}
+input:focus,select:focus{outline:none;border-color:var(--blue)}
+button{width:100%;padding:.9rem;margin:.4rem 0;font-size:1.05rem;font-weight:700;color:#fff;border:0;
+  border-radius:16px;background:linear-gradient(135deg,var(--blue),#7a6cff);cursor:pointer}
+button:disabled{opacity:.45;cursor:not-allowed}
+button.ghost{background:#eceffd;color:var(--ink)}
+.step{display:none}.step.active{display:block}
+.chk{display:flex;gap:.6rem;align-items:flex-start;margin:.6rem 0;font-size:.95rem}
+.chk input{width:auto;margin-top:.25rem}
+.stage{position:relative}
+video{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:18px;background:#111}
+#live{transform:scaleX(-1)}
+.oval{position:absolute;left:50%;top:50%;width:52%;height:78%;transform:translate(-50%,-50%);
+  border:4px solid #ff8a5c;border-radius:50%;pointer-events:none;transition:border-color .2s}
+.oval.ok{border-color:var(--green)}
+#timer{position:absolute;top:10px;right:16px;color:#fff;font-size:2.2rem;font-weight:800;text-shadow:0 0 6px #000}
+#hint{text-align:center;font-weight:700;min-height:1.6em;margin:.5rem 0}
+.clip{display:flex;align-items:center;gap:.7rem;margin:.6rem 0;padding:.7rem 1rem;
+  background:#effaf4;border-radius:14px;font-weight:600}
+.tick{display:grid;place-items:center;width:1.7rem;height:1.7rem;border-radius:50%;
+  background:var(--green);color:#fff;font-weight:800}
+.clip .mini{width:auto;margin:0 0 0 auto;padding:.35rem .9rem;font-size:.85rem;background:#eceffd;color:var(--ink)}
+#banner{background:#ffe3e3;color:#a11;border-radius:14px;padding:.8rem 1rem;margin-bottom:.8rem;font-weight:600}

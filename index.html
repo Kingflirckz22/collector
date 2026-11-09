@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Face Enrollment</title>
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+</head>
+<body>
+<canvas id="bg"></canvas>
+<main>
+  <div id="banner" hidden></div>
+  <div class="card">
+    <div class="step active" id="s0">
+      <h1>Hi there! 👋</h1>
+      <p>Let's set up your face ID. It takes about a minute.</p>
+      <input id="matric" placeholder="Matric number" autocomplete="off">
+      <input id="name" placeholder="Full name">
+      <input id="email" type="email" placeholder="Email (optional)">
+      <select id="dept"></select>
+      <select id="level"><option>ND I</option><option>ND II</option><option>HND I</option><option>HND II</option></select>
+      <label class="chk"><input type="checkbox" id="consent"><span>I agree to my face videos being recorded and used to train the attendance system.</span></label>
+      <button id="startBtn">Continue to camera </button>
+    </div>
+    <div class="step" id="s1">
+      <h2 id="prompt"></h2>
+      <div class="stage">
+        <video id="live" autoplay muted playsinline></video>
+        <div class="oval" id="oval"></div><div id="timer"></div>
+      </div>
+      <div id="hint">Starting camera…</div>
+      <button id="recBtn" disabled>🎥 Record 5 seconds</button>
+    </div>
+    <div class="step" id="s2">
+      <h2>Check your clips 👀</h2>
+      <div id="clips"></div>
+      <p><b id="sumMatric"></b><br><span id="sumName"></span></p>
+      <label class="chk"><input type="checkbox" id="confirm"><span>My matric number and name are correct.</span></label>
+      <button id="submitBtn" disabled>Submit enrollment</button>
+      <button id="restartBtn" class="ghost">Start over</button>
+      <p id="status"></p>
+    </div>
+    <div class="step" id="s3">
+      <h1>All done! 🎉</h1><p>Thank you, you're enrolled.</p>
+      <button id="nextBtn">Home Page</button>
+    </div>
+  </div>
+</main>
+<script type="module" src="/src/main.js"></script>
+</body>
+</html>
